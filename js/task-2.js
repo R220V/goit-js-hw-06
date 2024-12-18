@@ -9,23 +9,42 @@
 // addItem(newItem) — приймає новий товар newItem і додає його до масиву товарів у приватну властивість items об'єкта.
 // removeItem(itemToRemove) — приймає рядок з назвою товару itemToRemove і видаляє його з масиву товарів у приватній властивості items об'єкта.
 
+//// class Storage {
+////   constructor(initialItems) {
+////     this.items = initialItems;
+//// }
+
+////   getItems() {
+////   return this.items;
+////   }
+
+//// addItem(newItem) {
+////   this.items.push(newItem);
+//// }
+
+////   removeItem(itemToRemove) {
+////     const itemIndex = this.items.indexOf(itemToRemove);
+////     if (itemIndex !== -1) {
+////       this.items.splice(itemIndex, 1);
+////     }
+////   }
+//// }
+
 class Storage {
   constructor(initialItems) {
-    this.items = initialItems;
+    this.#items = initialItems;
   }
-
+  #items;
   getItems() {
-    return this.items;
+    return this.#items;
   }
-
   addItem(newItem) {
-    this.items.push(newItem);
+    this.#items.push(newItem);
   }
-
   removeItem(itemToRemove) {
-    const itemIndex = this.items.indexOf(itemToRemove);
+    const itemIndex = this.#items.indexOf(itemToRemove);
     if (itemIndex !== -1) {
-      this.items.splice(itemIndex, 1);
+      this.#items.splice(itemIndex, 1);
     }
   }
 }
